@@ -1,0 +1,66 @@
+@model List<SlowCoffee.Models.Cliente>
+
+<h1>Clientes da Slow Coffee</h1>
+
+<a class="btn btn-dark mb-3"
+   asp-controller="Cliente"
+   asp-action="Create">
+
+    Novo Cliente
+
+</a>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var cliente in Model)
+        {
+            <tr>
+
+                <td>@cliente.Id</td>
+
+                <td>@cliente.Nome</td>
+
+                <td>@cliente.Telefone</td>
+
+                <td>@cliente.Email</td>
+
+                <td>
+
+                    <a class="btn btn-warning btn-sm"
+                       asp-controller="Cliente"
+                       asp-action="Edit"
+                       asp-route-id="@cliente.Id">
+
+                        Editar
+                        
+                    <a class="btn btn-danger btn-sm"
+                       asp-controller="Cliente"
+                       asp-action="Delete"
+                    asp-route-id="@cliente.Id">
+
+                        Excluir
+
+                       </a>
+
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

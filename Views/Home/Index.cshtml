@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mb-5">
+
+    <h1 class="display-4">
+        ☕ Slow Coffee
+    </h1>
+
+    <p class="lead">
+        Sistema de gerenciamento da cafeteria
+    </p>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>
+                    📦 Produtos
+                </h3>
+
+                <p>
+                    Gerencie os produtos da cafeteria
+                </p>
+
+                <h2 class="mb-3">
+                    @ViewBag.TotalProdutos
+                </h2>
+
+                <a class="btn btn-dark"
+                   asp-controller="Produto"
+                   asp-action="Index">
+
+                    Ver Produtos
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>
+                    👥 Clientes
+                </h3>
+
+                <p>
+                    Gerencie os clientes cadastrados
+                </p>
+<h2 class="mb-3">
+    @ViewBag.TotalClientes
+</h2>
+                <a class="btn btn-dark"
+                   asp-controller="Cliente"
+                   asp-action="Index">
+
+                    Ver Clientes
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>
+                    🧾 Pedidos
+                </h3>
+
+                <p>
+                    Controle os pedidos da cafeteria
+                </p>
+<h2 class="mb-3">
+    @ViewBag.TotalPedidos
+</h2>
+                <a class="btn btn-dark"
+                   asp-controller="Pedido"
+                   asp-action="Index">
+
+                    Ver Pedidos
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
